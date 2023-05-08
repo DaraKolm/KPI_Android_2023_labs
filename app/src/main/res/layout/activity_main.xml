@@ -100,7 +100,6 @@
             android:layout_width="125dp"
             android:layout_height="50dp"
             android:text="18sp"
-
             app:layout_constraintBottom_toTopOf="@+id/radioButton6"
             app:layout_constraintStart_toStartOf="@+id/radioGroup2"
             app:layout_constraintTop_toTopOf="@+id/radioGroup2" />
