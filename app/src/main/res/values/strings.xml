@@ -3,4 +3,8 @@
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
     <string name="text_ent">Your text</string>
+    <string name="message_empty">Field can\'t be empty</string>
+    <string name="message_empty_radio">Choose radio button</string>
+    <string name="message_cancel">Canceled and cleared</string>
+    <string name="my_activity_label">Вітаю на 1 лабі</string>
 </resources>
