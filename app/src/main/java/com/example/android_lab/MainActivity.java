@@ -34,10 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
         butOK.setOnClickListener(v -> {
             text = userText.getText().toString();
-            if(text.trim().equals("")){
+            if(text.trim().equals("")||text.trim().equals(getString(R.string.text_ent).trim())){
                 Toast.makeText(MainActivity.this, R.string.message_empty,Toast.LENGTH_LONG).show();
             }else{
-
                  int radioButtonID;
                  /*radioButtonID=0;
                 boolean flag = true;
