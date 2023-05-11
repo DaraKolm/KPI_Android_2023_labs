@@ -6,5 +6,8 @@
     <string name="message_empty">Enter your text to the field</string>
     <string name="message_empty_radio">Choose radio button</string>
     <string name="message_cancel">Canceled and cleared</string>
-    <string name="my_activity_label">Вітаю на 1 лабі</string>
+    <string name="my_activity_label_1">Вітаю на 1 лабі</string>
+    <string name="my_activity_label_2">Вітаю на 2 лабі</string>
+    <string name="text_view1">Choose font size:</string>
+    <string name="text_view2">Enter text:</string>
 </resources>
