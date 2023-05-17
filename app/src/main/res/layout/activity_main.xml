@@ -1,130 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView1"
+        android:name="com.example.android_lab.Fragment1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="10sp"
-        android:text="Choose font size:"
+        android:layout_margin="10sp"
+        tools:layout="@layout/fragment_1" />
 
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.example.android_lab.Fragment2"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:layout_margin="10sp"
+        android:visibility="invisible"
+        tools:layout="@layout/fragment_2" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup1"
-        android:layout_width="125dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView1"
-        app:layout_constraintTop_toBottomOf="@+id/textView1"
-        app:layout_constraintVertical_bias="0.5">
-
-        <RadioButton
-            android:id="@+id/radioButton1"
-            android:layout_width="125dp"
-            android:layout_height="50dp"
-            android:text="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/radioButton2"
-            app:layout_constraintStart_toStartOf="@+id/radioGroup1"
-            app:layout_constraintTop_toTopOf="@+id/radioGroup1" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="125dp"
-            android:layout_height="50dp"
-            android:text="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/radioButton3"
-            app:layout_constraintStart_toStartOf="@+id/radioButton1"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton1" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="125dp"
-            android:layout_height="50dp"
-            android:text="36sp"
-            app:layout_constraintStart_toStartOf="@+id/radioButton2"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10sp"
-
-        android:text="Enter text:"
-        android:textSize="24sp"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toTopOf="@+id/userText"
-        app:layout_constraintStart_toStartOf="@+id/radioGroup1"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup1"
-        app:layout_constraintVertical_bias="0.5" />
-
-
-    <EditText
-        android:id="@+id/userText"
-        android:layout_width="340dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="text"
-
-        android:hint="@string/text_ent"
-        app:layout_constraintBottom_toTopOf="@+id/buttonOK"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.5" />
-    <!--android:text="@string/text_ent"-->
-
-
-    <Button
-        android:id="@+id/buttonOK"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5sp"
-        android:text="@string/button_ok"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="@+id/userText"
-        app:layout_constraintTop_toBottomOf="@+id/userText"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <Button
-        android:id="@+id/buttonCancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_cancel"
-        app:layout_constraintEnd_toEndOf="@+id/userText"
-        app:layout_constraintTop_toTopOf="@+id/buttonOK" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="342dp"
-        android:layout_height="250dp"
-        android:text="@string/text_ent"
-        android:layout_marginBottom="10sp"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buttonCancel"
-        app:layout_constraintStart_toStartOf="@+id/buttonOK"
-        app:layout_constraintTop_toBottomOf="@+id/buttonOK" />
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
