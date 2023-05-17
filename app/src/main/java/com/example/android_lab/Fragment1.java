@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 public class Fragment1 extends Fragment {
 
-    private String text;
     private EditText userText;
     private RadioGroup radioGroup;
     private int rb1ID;
@@ -49,7 +48,7 @@ public class Fragment1 extends Fragment {
     public View.OnClickListener buttonOK_click = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            text = userText.getText().toString();
+            String text = userText.getText().toString();
             //userText.setText(text.toUpperCase());
                 if(text.trim().equals("")){
                     Toast.makeText(getContext(), R.string.message_empty,Toast.LENGTH_LONG).show();
