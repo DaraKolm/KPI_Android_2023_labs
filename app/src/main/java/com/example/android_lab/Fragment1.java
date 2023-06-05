@@ -58,6 +58,7 @@ public class Fragment1 extends Fragment {
                     RadioButton radioButton = radioGroup.findViewById(radioButtonID);
                     String fontSize = radioButton.getText().toString().replace("sp","");
                     fragmentSentDataListener.onSendData(text,fontSize);
+
                 }
         }
     };

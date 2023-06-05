@@ -2,6 +2,7 @@
     <string name="app_name">Android_lab</string>
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
+    <string name="button_open">Open all</string>
     <string name="text_ent">Your text</string>
     <string name="message_empty">Enter your text to the field</string>
     <string name="message_empty_radio">Choose radio button</string>
