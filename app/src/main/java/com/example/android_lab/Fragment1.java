@@ -1,6 +1,7 @@
 package com.example.android_lab;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -61,8 +62,6 @@ public class Fragment1 extends Fragment {
         radioGroup.check(view.findViewById(R.id.radioButton1).getId());
         rb1ID =view.findViewById(R.id.radioButton1).getId();
 
-        final Button buttonOpen = view.findViewById(R.id.buttonOpen);
-        buttonOpen.setOnClickListener(buttonOpen_click);
 
 
         return view;

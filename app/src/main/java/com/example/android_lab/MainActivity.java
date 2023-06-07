@@ -2,8 +2,10 @@ package com.example.android_lab;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +14,7 @@ import androidx.fragment.app.FragmentContainerView;
 public class MainActivity extends AppCompatActivity
         implements Fragment1.OnFragmentSentDataListener,Fragment2.OnFragmentClearDataListener {
 
-
+    Fragment1 fragment1;
     DBHelper dbHelper;
     //---Виведення даних і показ фрагмента 2
     @Override
@@ -87,6 +89,14 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         dbHelper = new DBHelper(this);
+
+        final Button buttonOpen = findViewById(R.id.buttonOpen);
+        buttonOpen.setOnClickListener(v -> {
+            Intent intent = new Intent(this, StorageActivity.class);
+            startActivity(intent);
+        });
+        //fragment1 = new Fragment1();
+        //loadFragment(fragment1, "Input_Fragment");
 /*
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()

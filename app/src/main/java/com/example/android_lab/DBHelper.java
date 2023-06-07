@@ -20,7 +20,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        String createTableQuery = "CREATE TABLE "+TABLE_NAME+" (text TEXT, fontSize TEXT)";
+        String createTableQuery = "CREATE TABLE "+TABLE_NAME+" (fontSize TEXT,text TEXT)";
         db.execSQL(createTableQuery);
     }
 
@@ -31,11 +31,11 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public int addNote(String t, String fs){
+    public int addNote(String fs,String t){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("text",t);
         cv.put("fontSize",fs);
+        cv.put("text",t);
         int res=(int)db.insert(TABLE_NAME,null, cv);
         db.close();
         return res;

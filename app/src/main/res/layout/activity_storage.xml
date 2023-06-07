@@ -16,9 +16,16 @@
         app:layout_constraintStart_toStartOf="parent"
 
         />
-
     <Button
-        android:id="@+id/button_goBack"
+        android:id="@+id/buttonDeleteDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_deleteDB"
+        android:layout_margin="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <Button
+        android:id="@+id/buttonGoBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_goBack"

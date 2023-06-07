@@ -4,6 +4,7 @@
     <string name="button_cancel">Cancel</string>
     <string name="button_open">Open all</string>
     <string name="button_goBack">Go back</string>
+    <string name="button_deleteDB">Delete DB</string>
 
     <string name="text_ent">Your text</string>
     <string name="text_view1">Choose font size:</string>
@@ -15,6 +16,7 @@
 
     <string name="message_db_saved">Note successfully saved</string>
     <string name="message_db_ERROR_saving">ERROR: Note wasn\'t saved</string>
+    <string name="message_db_empty">Database is empty</string>
 
     <string name="my_activity_label_1">Вітаю на 1 лабі</string>
     <string name="my_activity_label_2">Вітаю на 2 лабі</string>
