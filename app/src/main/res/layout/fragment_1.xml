@@ -36,7 +36,7 @@
             android:id="@+id/radioButton1"
             android:layout_width="125dp"
             android:layout_height="50dp"
-            android:text="18sp"
+            android:text="@string/text_fontSize_18sp"
             app:layout_constraintBottom_toTopOf="@+id/radioButton2"
             app:layout_constraintStart_toStartOf="@+id/radioGroup1"
             app:layout_constraintTop_toTopOf="@+id/radioGroup1" />
@@ -45,7 +45,7 @@
             android:id="@+id/radioButton2"
             android:layout_width="125dp"
             android:layout_height="50dp"
-            android:text="24sp"
+            android:text="@string/text_fontSize_24sp"
             app:layout_constraintBottom_toTopOf="@+id/radioButton3"
             app:layout_constraintStart_toStartOf="@+id/radioButton1"
             app:layout_constraintTop_toBottomOf="@+id/radioButton1" />
@@ -54,7 +54,7 @@
             android:id="@+id/radioButton3"
             android:layout_width="125dp"
             android:layout_height="50dp"
-            android:text="36sp"
+            android:text="@string/text_fontSize_36sp"
             app:layout_constraintStart_toStartOf="@+id/radioButton2"
             app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
     </RadioGroup>
@@ -104,13 +104,13 @@
         app:layout_constraintTop_toBottomOf="@+id/userText"
         app:layout_constraintVertical_bias="0.5" />
 
-    <!--Button
+    <Button
         android:id="@+id/buttonOpen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_open"
         android:layout_margin="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" /-->
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

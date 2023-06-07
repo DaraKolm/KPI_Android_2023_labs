@@ -46,7 +46,7 @@
                 android:id="@+id/radioButton1"
                 android:layout_width="75sp"
                 android:layout_height="match_parent"
-                android:text="18sp"
+                android:text="@string/text_fontSize_18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,7 +55,7 @@
                 android:id="@+id/radioButton2"
                 android:layout_width="75sp"
                 android:layout_height="match_parent"
-                android:text="24sp"
+                android:text="@string/text_fontSize_24sp"
                 app:layout_constraintStart_toEndOf="@+id/radioButton1"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/radioButton3" />
@@ -64,7 +64,7 @@
                 android:id="@+id/radioButton3"
                 android:layout_width="75sp"
                 android:layout_height="match_parent"
-                android:text="36sp"
+                android:text="@string/text_fontSize_36sp"
                 app:layout_constraintStart_toEndOf="@+id/radioButton2"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

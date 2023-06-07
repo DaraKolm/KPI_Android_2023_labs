@@ -1,8 +1,6 @@
 package com.example.android_lab;
 
-import static java.security.AccessController.getContext;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,12 +9,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.nio.CharBuffer;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class StorageActivity extends AppCompatActivity {
-    private List <Note> list = new ArrayList<>();
+    final private List <Note> list = new ArrayList<>();
     private DBHelper dbHelper;
     private TextView textView;
 
@@ -80,13 +78,7 @@ public class StorageActivity extends AppCompatActivity {
         }
     };
 
-    public View.OnClickListener buttonGoBack_click = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            StorageActivity.super.onBackPressed();
-
-        }
-    };
+    public View.OnClickListener buttonGoBack_click = v -> StorageActivity.super.onBackPressed();
 
 
 

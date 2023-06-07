@@ -10,6 +10,11 @@
     <string name="text_view1">Choose font size:</string>
     <string name="text_view2">Enter text:</string>
 
+    <string name="text_fontSize_18sp">18sp</string>
+    <string name="text_fontSize_24sp">24sp</string>
+    <string name="text_fontSize_36sp">36sp</string>
+
+
     <string name="message_empty">Enter your text to the field</string>
     <string name="message_empty_radio">Choose radio button</string>
     <string name="message_cancel">Canceled and cleared</string>

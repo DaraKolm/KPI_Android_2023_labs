@@ -62,7 +62,11 @@ public class Fragment1 extends Fragment {
         radioGroup.check(view.findViewById(R.id.radioButton1).getId());
         rb1ID =view.findViewById(R.id.radioButton1).getId();
 
-
+        final Button buttonOpen = view.findViewById(R.id.buttonOpen);
+        buttonOpen.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), StorageActivity.class);
+            startActivity(intent);
+        });
 
         return view;
     }
@@ -85,15 +89,6 @@ public class Fragment1 extends Fragment {
                 }
         }
     };
-    public View.OnClickListener buttonOpen_click = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-
-        }
-    };
-
-
-
 
 
     @Override
@@ -101,6 +96,19 @@ public class Fragment1 extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
+    /*
+    public View.OnClickListener buttonOpen_click = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    };*/
+
+
+
+
+
+
 
 
 
