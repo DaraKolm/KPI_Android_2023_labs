@@ -1,6 +1,7 @@
 package com.example.android_lab;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -12,7 +13,7 @@ public class MainActivity extends AppCompatActivity
         implements Fragment1.OnFragmentSentDataListener,Fragment2.OnFragmentClearDataListener {
 
 
-
+    DBHelper dbHelper;
     //---Виведення даних і показ фрагмента 2
     @Override
     public void onSendData(String textSend, String fontSize){
@@ -22,6 +23,13 @@ public class MainActivity extends AppCompatActivity
             FragmentContainerView frView2 = findViewById(R.id.fragmentContainerView2);
             frView2.setVisibility(View.VISIBLE);
             fragment2.SetParamsTextView(textSend,fontSize);
+
+            int res = dbHelper.addNote(textSend,fontSize);
+            if(res!=-1){
+                Toast.makeText(this, R.string.message_db_saved,Toast.LENGTH_LONG).show();
+            }else{
+                Toast.makeText(this, R.string.message_db_ERROR_saving,Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -78,6 +86,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        dbHelper = new DBHelper(this);
 /*
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()

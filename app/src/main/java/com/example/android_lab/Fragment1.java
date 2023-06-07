@@ -45,23 +45,7 @@ public class Fragment1 extends Fragment {
         radioGroup.check(rb1ID);
     }
 
-    public View.OnClickListener buttonOK_click = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            String text = userText.getText().toString();
-            //userText.setText(text.toUpperCase());
-                if(text.trim().equals("")){
-                    Toast.makeText(getContext(), R.string.message_empty,Toast.LENGTH_LONG).show();
-                }else{
-                    int radioButtonID;
-                    radioButtonID = radioGroup.getCheckedRadioButtonId();
-                    RadioButton radioButton = radioGroup.findViewById(radioButtonID);
-                    String fontSize = radioButton.getText().toString().replace("sp","");
-                    fragmentSentDataListener.onSendData(text,fontSize);
 
-                }
-        }
-    };
 
 
     @Override
@@ -77,30 +61,48 @@ public class Fragment1 extends Fragment {
         radioGroup.check(view.findViewById(R.id.radioButton1).getId());
         rb1ID =view.findViewById(R.id.radioButton1).getId();
 
+        final Button buttonOpen = view.findViewById(R.id.buttonOpen);
+        buttonOpen.setOnClickListener(buttonOpen_click);
+
 
         return view;
     }
+
+
+    public View.OnClickListener buttonOK_click = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String text = userText.getText().toString();
+            //userText.setText(text.toUpperCase());
+                if(text.trim().isEmpty()){
+                    Toast.makeText(getContext(), R.string.message_empty,Toast.LENGTH_LONG).show();
+                }else{
+                    int radioButtonID;
+                    radioButtonID = radioGroup.getCheckedRadioButtonId();
+                    RadioButton radioButton = radioGroup.findViewById(radioButtonID);
+                    String fontSize = radioButton.getText().toString().replace("sp","");
+                    fragmentSentDataListener.onSendData(text,fontSize);
+
+                }
+        }
+    };
+    public View.OnClickListener buttonOpen_click = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    };
+
+
+
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /*
-        getActivity().
-        EditText userText = getActivity().findViewById(R.id.userText);
-        RadioGroup radioGroup = getActivity().findViewById(R.id.radioGroup1);
-        radioGroup.check(getActivity().findViewById(R.id.radioButton1).getId());
-*/
     }
-    public static Fragment1 newInstance(String param1, String param2) {
-        Fragment1 fragment = new Fragment1();
-        /*Bundle args = new Bundle();
-        //args.putString(ARG_PARAM1, param1);
-        //args.putString(ARG_PARAM2, param2);
-        //fragment.setArguments(args);*/
-        return fragment;
-    }
+
 
 
 }

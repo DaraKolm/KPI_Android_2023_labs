@@ -1,8 +1,13 @@
 package com.example.android_lab;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "dbNotes";
@@ -26,8 +31,39 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public int addNote(String t, String fs){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("text",t);
+        cv.put("fontSize",fs);
+        int res=(int)db.insert(TABLE_NAME,null, cv);
+        db.close();
+        return res;
+    }
 
+    public List<Note> getAllNotes(){
+        List<Note> noteList = new ArrayList<>();
+        String selectAllQuery = "SELECT * FROM "+TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectAllQuery,null);
 
+        if(cursor.moveToFirst()){
+           do{
+               Note note = new Note (cursor.getString(0),cursor.getString(1));
+               noteList.add(note);
+           }while(cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+
+        return noteList;
+    }
+
+    public void deleteDB(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME,null, null);
+        db.close();
+    }
 
 
 

@@ -23,7 +23,7 @@ public class Note {
     }
     @Override
     public String toString(){
-        return fontSize+" "+text.trim();
+        return fontSize.trim()+" "+text.trim();
     }
     public Note getFromString(String str){
         String []t;

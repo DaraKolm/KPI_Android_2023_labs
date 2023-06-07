@@ -3,14 +3,24 @@
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
     <string name="button_open">Open all</string>
+    <string name="button_goBack">Go back</string>
+
     <string name="text_ent">Your text</string>
+    <string name="text_view1">Choose font size:</string>
+    <string name="text_view2">Enter text:</string>
+
     <string name="message_empty">Enter your text to the field</string>
     <string name="message_empty_radio">Choose radio button</string>
     <string name="message_cancel">Canceled and cleared</string>
+
+    <string name="message_db_saved">Note successfully saved</string>
+    <string name="message_db_ERROR_saving">ERROR: Note wasn\'t saved</string>
+
     <string name="my_activity_label_1">Вітаю на 1 лабі</string>
     <string name="my_activity_label_2">Вітаю на 2 лабі</string>
-    <string name="text_view1">Choose font size:</string>
-    <string name="text_view2">Enter text:</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_activity_label_3">Вітаю на 3 лабі</string>
+
+
+
+
 </resources>
