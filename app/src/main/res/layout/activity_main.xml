@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" /-->
 
 
-    <androidx.fragment.app.FragmentContainerView
+    <!--androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView1"
         android:name="com.example.android_lab.Fragment1"
         android:layout_width="match_parent"
@@ -25,9 +25,9 @@
         android:layout_margin="10sp"
         tools:layout="@layout/fragment_1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"/-->
 
-    <androidx.fragment.app.FragmentContainerView
+    <!--androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
         android:name="com.example.android_lab.Fragment2"
         android:layout_width="match_parent"
@@ -36,6 +36,35 @@
         android:visibility="invisible"
         tools:layout="@layout/fragment_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragmentContainerView1"/>
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainerView1"/-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Audio" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Video"
+            tools:layout_editor_absoluteX="210dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view_pager"
+        android:layout_below="@+id/tab_layout"
+         />
+
+</RelativeLayout>

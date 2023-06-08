@@ -9,44 +9,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentContainerView;
+import androidx.viewpager2.widget.ViewPager2;
 
-public class MainActivity extends AppCompatActivity
-        implements Fragment1.OnFragmentSentDataListener,Fragment2.OnFragmentClearDataListener {
+import com.google.android.material.tabs.TabLayout;
 
-    DBHelper dbHelper;
-    Fragment1 fragment1;
-    Fragment2 fragment2;
-    //---Виведення даних і показ фрагмента 2
-    @Override
-    public void onSendData(String textSend, String fontSize){
-        fragment2 = (Fragment2)getSupportFragmentManager()
-                .findFragmentById(R.id.fragmentContainerView2);
-        if (fragment2 !=null){
-            FragmentContainerView frView2 = findViewById(R.id.fragmentContainerView2);
-            frView2.setVisibility(View.VISIBLE);
-            fragment2.SetParamsTextView(textSend,fontSize);
+public class MainActivity extends AppCompatActivity {
 
-            int res = dbHelper.addNote(textSend,fontSize);
-            if(res!=-1){
-                Toast.makeText(this, R.string.message_db_saved,Toast.LENGTH_LONG).show();
-            }else{
-                Toast.makeText(this, R.string.message_db_ERROR_saving,Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
-    //---Очищення даних і приховання фрагмента 2
-    @Override
-    public void onClearData(){
-        fragment1 = (Fragment1)getSupportFragmentManager()
-                .findFragmentById(R.id.fragmentContainerView1);
-        if (fragment1 !=null){
-            FragmentContainerView frView2 = findViewById(R.id.fragmentContainerView2);
-            frView2.setVisibility(View.INVISIBLE);
-            fragment1.ClearInputFragment1();
-            Toast.makeText(MainActivity.this, R.string.message_cancel,Toast.LENGTH_LONG).show();
-        }
-    }
+    TabLayout tabLayout;
+    ViewPager2 viewPager2;
+    MyViewPagerAdapter myViewPagerAdapter;
 
 
 
@@ -55,13 +26,35 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dbHelper = new DBHelper(this);
+        tabLayout=findViewById(R.id.tab_layout);
+        viewPager2=findViewById(R.id.view_pager);
+        myViewPagerAdapter=new MyViewPagerAdapter(this);
+        viewPager2.setAdapter(myViewPagerAdapter);
 
-        /*final Button buttonOpen = findViewById(R.id.buttonOpen);
-        buttonOpen.setOnClickListener(v -> {
-            Intent intent = new Intent(this, StorageActivity.class);
-            startActivity(intent);
-        });*/
 
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager2.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                tabLayout.getTabAt(position).select();
+            }
+        });
     }
 }

@@ -6,28 +6,21 @@
     <string name="button_goBack">Go back</string>
     <string name="button_deleteDB">Delete DB</string>
 
-    <string name="text_ent">Your text</string>
-    <string name="text_view1">Choose font size:</string>
-    <string name="text_view2">Enter text:</string>
-
-    <string name="text_fontSize_18sp">18sp</string>
-    <string name="text_fontSize_24sp">24sp</string>
-    <string name="text_fontSize_36sp">36sp</string>
-
-
-    <string name="message_empty">Enter your text to the field</string>
-    <string name="message_empty_radio">Choose radio button</string>
-    <string name="message_cancel">Canceled and cleared</string>
-
-    <string name="message_db_saved">Note successfully saved</string>
-    <string name="message_db_ERROR_saving">ERROR: Note wasn\'t saved</string>
-    <string name="message_db_empty">Database is empty</string>
-
     <string name="my_activity_label_1">Вітаю на 1 лабі</string>
     <string name="my_activity_label_2">Вітаю на 2 лабі</string>
     <string name="my_activity_label_3">Вітаю на 3 лабі</string>
+    <string name="my_activity_label">Вітаю на 4 лабі</string>
 
+    <string name="button_play">Play</string>
+    <string name="button_pause">Pause</string>
+    <string name="button_backToStart">Replay</string>
+    <string name="button_findAudio">Find audio</string>
 
+    <string name="audio_songName">Song</string>
+    <string name="audio_0">0:00</string>
 
+    <string name="button_findVideo">Find video</string>
+    <string name="button_findVideo_horizontal">F i nd
+                                                v i deo</string>
 
 </resources>
