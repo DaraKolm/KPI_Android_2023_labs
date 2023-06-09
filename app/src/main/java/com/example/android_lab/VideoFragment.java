@@ -23,6 +23,7 @@ public class VideoFragment extends Fragment {
 
     private VideoView videoView;
     private Button button_findVideo;
+    private int stopPosition = 0;
     public VideoFragment() {
         // Required empty public constructor
     }
@@ -70,4 +71,24 @@ public class VideoFragment extends Fragment {
                 }
             }
     );
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(videoView!=null){
+            stopPosition=videoView.getCurrentPosition();
+            videoView.pause();
+        }
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        if(videoView!=null){
+            videoView.seekTo(stopPosition);
+            videoView.start();
+        }
+    }
+
+
 }
